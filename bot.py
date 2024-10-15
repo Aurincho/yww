@@ -48,7 +48,7 @@ weth_abi = '''
 
 weth_contract = web3.eth.contract(address=weth_contract_address, abi=weth_abi)
 
-amount_in_wei = web3.to_wei(0.00001, 'ether') # Nilai Swap
+amount_in_wei = web3.to_wei(0.000001, 'ether') # Nilai Swap
 
 gas_price_gwei = 0.14 # Nilai Gwei
 max_priority_fee_per_gas = web3.to_wei(gas_price_gwei, 'gwei')
