@@ -11,7 +11,7 @@ if not web3.is_connected():
     exit()
 
 # Ambil private key dari variabel lingkungan
-private_key = "PRIVATE"  # Ganti dengan private key Anda
+private_key = "ALAMAT"  # Ganti dengan private key Anda
 my_address = Web3.to_checksum_address("ALAMAT")  # Alamat dompet Anda
 
 # Alamat kontrak voting yang diberikan
@@ -101,8 +101,18 @@ def vote():
         print(f"Error saat mengirim transaksi voting: {e}")
     return False
 
-# Panggil fungsi vote
-if vote():
-    print("Voting berhasil dilakukan!")
-else:
-    print("Voting gagal!")
+# Tentukan jumlah voting yang ingin dilakukan
+total_votes = 5  # Misalnya ingin melakukan voting 5 kali
+
+# Loop untuk melakukan voting beberapa kali
+for i in range(total_votes):
+    print(f"\nMelakukan voting ke-{i+1} dari {total_votes}...")
+    if vote():
+        print(f"Voting ke-{i+1} berhasil!")
+    else:
+        print(f"Voting ke-{i+1} gagal!")
+
+    # Tunggu beberapa detik antara voting jika diperlukan (misalnya 5 detik)
+    time.sleep(5)
+
+print("\nProses voting selesai.")
