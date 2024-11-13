@@ -11,7 +11,7 @@ if not web3.is_connected():
     exit()
 
 # Ambil private key dari variabel lingkungan
-private_key = "ALAMAT"  # Ganti dengan private key Anda
+private_key = "PRIVATE"  # Ganti dengan private key Anda
 my_address = Web3.to_checksum_address("ALAMAT")  # Alamat dompet Anda
 
 # Alamat kontrak voting yang diberikan
